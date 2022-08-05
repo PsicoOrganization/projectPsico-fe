@@ -5,6 +5,9 @@ import LogIn from './components/LogIn.vue'
 import SignUp from './components/SignUp.vue'
 import Account from './components/Account.vue'
 import HomePage from './components/HomePage.vue'
+import AboutUs from './components/AboutUS.vue'
+import Psychologists from './components/Psychologists.vue'
+import Home from './components/Home.vue'
 
 const routes = [
   {
@@ -13,9 +16,24 @@ const routes = [
     component: App
   },
   {
+    path: '/psychologists',
+    name: 'psychologists',
+    component: Psychologists
+  },
+  {
+    path: '/aboutUs',
+    name: 'aboutUs',
+    component: AboutUs
+  },
+  {
     path: '/user/logIn',
     name: 'logIn',
     component: LogIn
+  },
+  {
+    path: '/user/home',
+    name: 'home',
+    component: Home
   },
   {
     path: '/user/signUp',
