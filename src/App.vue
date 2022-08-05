@@ -6,12 +6,17 @@
       </div>
       <nav>
         <ul>
-          <li><a v-if="!is_auth"> Inicio</a></li>
+          <li><a v-if="!is_auth" v-on:click="loadHomePage"> Inicio </a></li>
           <li><a>Busca Experto</a></li>
           <li><a>Nosotros</a></li>
         </ul>
       </nav>
-      <a class="btn"><button>¿Eres profesional?</button></a>
+      <li class="submenu"><a v-if="!is_auth" class="btn"><button>¿Eres profesional?</button></a>
+      <ul class="hijos">
+        <li><a v-on:click="loadLogIn">Iniciar Sesion</a></li>
+        <li><a v-on:click="loadSignUp">Registrarse</a></li>
+      </ul>
+      </li>
     </div>
 
     <div class="main-component">
@@ -39,8 +44,12 @@ export default {
   methods: {
     verifyAuth: function(){
         if(this.is_auth == false){
-            this.$router.push({name: "main"})
+            this.$router.push({name: "homepage"})
         }
+    },
+
+    loadHomePage: function(){
+      this.$router.push({name: "homepage"})
     },
 
     loadLogIn: function(){
@@ -50,6 +59,19 @@ export default {
     loadSignUp: function(){
       this.$router.push({name: 'signUp'})
     },
+
+     logOut: function(){
+        alert("Sesion Cerrada")
+     },
+
+    completedLogIn: function(data){
+
+    },
+
+    completedSignUp: function(data){
+
+    },
+
   },
 
   created: function(){
@@ -67,6 +89,37 @@ export default {
   padding: 0;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
+}
+
+.submenu{
+  list-style: none;
+}
+
+.header .btn button:hover{
+  background-color: #8589ED;
+  color: #BEE1FA;
+  transform: scale(1.1);
+}
+
+.header li:hover .hijos{
+	display: block;
+}
+
+.header .submenu .hijos{
+	display: none;
+	background: #8589ED;
+	position: relative;
+	width: 100%;
+}
+
+.header .submenu .hijos li{
+	display: block;
+	overflow: hidden;
+	border-bottom: none;
+}
+
+.header .submenu .hijos li a{
+	display: block;
 }
 
 .container{
@@ -134,12 +187,5 @@ text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
 }
-
-.header .btn button:hover{
-  background-color: #8589ED;
-  color: #BEE1FA;
-   transform: scale(1.1);
-}
-
 
 </style>
