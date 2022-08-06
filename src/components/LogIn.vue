@@ -24,12 +24,12 @@
             <div class="input">
                 <input type="submit" value="Ingresar">
             </div>
-            <!-- <div class="separator">
+            <div class="separator">
                 <h3> - O - </h3>
             </div>
             <div class="input" id="registater">
-                <input type="submit" value="Registrate">
-            </div> -->
+                <input v-on:click="loadSignUp" type="submit" value="Registrate">
+            </div>
         </form>
     </div>
 </body>
@@ -66,6 +66,10 @@ export default {
                     alert("ERROR 401: Credenciales Incorrectas.");
                 }   
             });
+        },
+
+        loadSignUp: function(){
+            this.$router.push({name: 'signUp'});
         }
     },
 
