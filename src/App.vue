@@ -136,15 +136,15 @@ export default {
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 
-*{
-  box-sizing:  border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-}
+  *{
+    box-sizing:  border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+  }
 
 /*Style Header*/
 
