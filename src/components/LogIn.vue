@@ -4,7 +4,8 @@
         <div class="img-form">
 
         </div>
-        <form class="form">
+        <form v-on:submit.prevent="proccessLogInUser" class="form">
+
             <div class="nameCompany">
                 <h2>Psico</h2>
             </div>
@@ -14,28 +15,60 @@
             </div>
             <div class="input">
                 <label for="usuario">Usuario</label>
-                <input placeholder="Ingresar Usuario" type="text" id="usuario">
+                <input placeholder="Ingresar Usuario" type="text" id="usuario" v-model="user.username">
             </div>
             <div class="input">
                 <label for="password">Contraseña</label>
-                <input placeholder="Ingresar contraseña" type="password" id="password">
+                <input placeholder="Ingresar contraseña" type="password" id="password" v-model="user.password">
             </div>
             <div class="input">
                 <input type="submit" value="Ingresar">
             </div>
-            <div class="separator">
+            <!-- <div class="separator">
                 <h3> - O - </h3>
             </div>
             <div class="input" id="registater">
                 <input type="submit" value="Registrate">
-            </div>
+            </div> -->
         </form>
     </div>
 </body>
 </template>
 <script>
+import axios from 'axios';
 export default {
     name: 'logIn',
+
+    data: function(){
+        return{
+            user: {
+                username:"",
+                password:""
+            }
+        }
+    },
+
+    methods: {
+        proccessLogInUser: function(){
+            axios.post(
+                "https://psico-app-be.herokuapp.com/login/",
+                this.user,
+                {headers: {} }
+            ).then((result) => {
+                let dataLogin = {
+                    username: this.user.username,
+                    token_access: result.data.access,
+                    token_refresh: result.data.refresh,
+                }
+                this.$emit('completedLogIn',dataLogin)
+            }).catch((err) => {
+                if (err.response.status == "401") {
+                    alert("ERROR 401: Credenciales Incorrectas.");
+                }   
+            });
+        }
+    },
+
 }
 </script>
 <style>
