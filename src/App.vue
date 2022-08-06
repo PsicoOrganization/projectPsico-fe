@@ -11,7 +11,7 @@
           <li><a v-if="!is_auth" v-on:click="loadAboutUs">Nosotros</a></li>
 
           <li><a v-if="is_auth" v-on:click="loadHome">Inicio</a></li>
-          <li><a v-if="is_auth" v-on:click="loadAccount">Cuenta</a></li>
+          <li><a v-if="!is_auth" v-on:click="loadAccount">Cuenta</a></li>
           <li><a v-if="is_auth" v-on:click="logOut">Cerrar Sesion</a></li>
         </ul>
       </nav>
@@ -47,7 +47,7 @@
         <div class="box">
           <h2>SIGUENOS</h2>
           <div class="red-social">
-            
+          
           </div>
         </div>
       </div>
