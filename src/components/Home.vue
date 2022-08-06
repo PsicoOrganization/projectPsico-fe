@@ -1,11 +1,17 @@
 <template>
     <div>
-        <h1>Pagina Home dentro del usuario</h1>
+        <h1>¡Bienvenido <span> {{username}} </span>!</h1>
     </div>
 </template>
 <script>
 export default {
     name: "home",
+    
+    data: function(){
+        return{
+            username: localStorage.getItem('username') || "none"
+        }
+    }
 }
 </script>
 <style>

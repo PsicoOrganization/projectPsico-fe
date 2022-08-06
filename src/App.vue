@@ -11,7 +11,7 @@
           <li><a v-if="!is_auth" v-on:click="loadAboutUs">Nosotros</a></li>
 
           <li><a v-if="is_auth" v-on:click="loadHome">Inicio</a></li>
-          <li><a v-if="!is_auth" v-on:click="loadAccount">Cuenta</a></li>
+          <li><a v-if="is_auth" v-on:click="loadAccount">Cuenta</a></li>
           <li><a v-if="is_auth" v-on:click="logOut">Cerrar Sesion</a></li>
         </ul>
       </nav>
@@ -27,6 +27,7 @@
       <router-view
       v-on:completedLogIn="completedLogIn"
       v-on:completedSignUp="completedSignUp"
+      v-on:logOut="logOut"
       ></router-view>
     </div>
 
@@ -69,8 +70,12 @@ export default {
 
   methods: {
     verifyAuth: function(){
+        this.is_auth = localStorage.getItem("isAuth") || false;
+
         if(this.is_auth == false){
-            this.$router.push({name: "homepage"})
+            this.$router.push({name: "homepage"});
+        }else{
+          this.$router.push({name: "home"});
         }
     },
 
@@ -103,11 +108,18 @@ export default {
     },
 
      logOut: function(){
-        alert("Sesion Cerrada")
+        localStorage.clear();
+        alert("Sesion Cerrada");
+        this.verifyAuth();
      },
 
-    completedLogIn: function(data){
-
+    completedLogIn: function(data){  
+      localStorage.setItem("isAuth",true);
+      localStorage.setItem("username",data.username);
+      localStorage.setItem("token_access",data.token_access);
+      localStorage.setItem("token_refresh", data.token_refresh);
+      alert("Autenticacion Exitosa");
+      this.verifyAuth();
     },
 
     completedSignUp: function(data){
@@ -121,6 +133,7 @@ export default {
   }
 }
 </script>
+
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
