@@ -6,10 +6,10 @@
         <div class="container-signUp">
             <h2 id= "title">Registrese en Psico y empiece a ayudar a pacientes en todo el país </h2>
             <h2>Registro de cuenta</h2>
-            <form>
+            <form v-on:submit.prevent="processSignUp">
                 <div class="form-left">
-                    <input type="text" v-model="user.name" placeholder="Nombre">
-                    <input type="text" v-model="user.username" placeholder="Nombre de usuario">
+                    <input type="text" v-model="user.name" placeholder="Nombre" required>
+                    <input type="text" v-model="user.username" placeholder="Nombre de usuario" required>
                     <input type="tel" v-model="user.phone" placeholder="Telefono" pattern="[0-9]{10}" required>
                     <select name="gender" v-model="user.gender">
                         <option value="M">Masculino</option>
@@ -22,9 +22,9 @@
                     </select>
                 </div>
                 <div class="form-right">
-                    <input type="text" v-model="user.address" placeholder="Dirección">                    
-                    <input type="email" v-model="user.email" placeholder="Correo">
-                    <input type="password" v-model="user.password" placeholder="contraseña">
+                    <input type="text" v-model="user.address" placeholder="Dirección" required>                    
+                    <input type="email" v-model="user.email" placeholder="Correo" required>
+                    <input type="password" v-model="user.password" placeholder="contraseña" required>
                     <input type="number" v-model="user.consultation_price" placeholder="Precio de consulta" min="0">
                     <select name="ciudad" v-model="user.city.name">
                         <option value="Bogotá">Bogotá</option>
@@ -78,7 +78,7 @@ export default {
             )
                 .then((result) =>{
                     let dataSignUp = {
-                        username: this,
+                        username: this.user.username,
                         token_access: result.data.access,
                         token_refresh: result.data.refresh,
                     }

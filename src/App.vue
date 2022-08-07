@@ -123,7 +123,8 @@ export default {
     },
 
     completedSignUp: function(data){
-
+        alert("Registro exitoso");
+        this.completedLogIn(data);
     },
 
   },
