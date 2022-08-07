@@ -70,9 +70,7 @@ export default {
     methods:{
         processSignUp: function(){
             axios.post(
-                //"https://mision-tic-bank-be.herokuapp.com/user/",
                 "https://psico-app-be.herokuapp.com/user/",
-                //"http://127.0.0.1:8000/user/",
                 this.user,
                 {headers: {}}
             )
