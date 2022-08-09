@@ -87,9 +87,7 @@ export default {
       this.$router.push({name: "home"})
     },
 
-    loadPsychologist: function(){
-      this.$router.push({name: "psychologists"})
-    },
+    
 
     loadHomePage: function(){
       this.$router.push({name: "homepage"})
@@ -157,6 +155,7 @@ export default {
   background-color: #8589ED;
   color: #BEE1FA;
   transform: scale(1.1);
+  
 }
 
 .header li:hover .hijos{
@@ -191,6 +190,7 @@ export default {
   align-items: center;
   height: 85px;
   padding: 5px 10%;
+  
 }
 
 .header .logo{

@@ -7,4 +7,4 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faUserSecret)
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).component('fa', FontAwesomeIcon).mount('#app')
