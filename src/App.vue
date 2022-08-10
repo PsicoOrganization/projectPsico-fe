@@ -307,14 +307,14 @@ text-decoration: none;
   color: aqua;
 }
 
-.footer .gruop2{
+.footer .grupo2{
   background-color: #0a1a2a;
   padding: 15px 10px;
   text-align: center;
   color: #fff;
 }
 
-.footer .gruop2 small{
+.footer .grupo2 small{
   font-size: 15px;
 }
 
