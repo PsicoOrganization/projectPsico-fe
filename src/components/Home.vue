@@ -84,13 +84,13 @@ export default {
     }
 
     .inicio .content h3{
-        font-size: 5.5rem;
+        font-size: 2.5rem;
         color: #4368F0;
         text-transform: uppercase;
     }
 
     .inicio .content h3 span{
-         font-size: 5.5rem;
+         font-size: 2.5rem;
         color: #8589ED;
         text-transform: uppercase;
 

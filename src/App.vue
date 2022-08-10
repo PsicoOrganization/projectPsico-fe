@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      <div class="gruop2">
+      <div class="grupo2">
         <small>&copy; 2022 <b>Psico</b> - Todos los Derechos Reservados.</small>
       </div>
     </footer>
