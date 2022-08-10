@@ -1,11 +1,11 @@
 <template>
 <body>
-    <div class="container-login container">
+    <div class="container">
         <div class="img-form">
-
+            <img src="../assets/login.png" alt="">
         </div>
-        <form v-on:submit.prevent="proccessLogInUser" class="form">
-
+        <div class="container-login">
+            <form v-on:submit.prevent="proccessLogInUser" class="form">
             <div class="nameCompany">
                 <h2>Psico</h2>
             </div>
@@ -31,6 +31,7 @@
                 <input v-on:click="loadSignUp" type="submit" value="Registrate">
             </div>
         </form>
+        </div>    
     </div>
 </body>
 </template>
@@ -105,28 +106,17 @@ body{
     margin: 0 auto;
     width: 100%;
     height: 100%;
+    display: grid;
 }
 
 .container-login{
-    display: flex;
+    display: grid;
+    grid-column: 2;
 }
 
 .img-form{
-    background-image: url(../assets/login.png);
-    background-position: center;
-    background-size: cover;
-    flex:  0 0 calc(60%);
-    position: relative;
-}
-
-.img-form::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to right, rgba(141,169,196,.5), rgba(19, 98, 189, 0.5));
+   display: grid;
+   grid-column: 1;
 }
 
 .form{

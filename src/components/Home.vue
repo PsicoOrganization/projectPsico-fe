@@ -2,10 +2,16 @@
     <section class="inicio" id="inicio">
         <div class="content">
             <h3>¡Bienvenido <span> {{username}} </span>!</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, incidunt! Illo recusandae error sit necessitatibus saepe suscipit? Recusandae at cum commodi quis doloribus beatae praesentium vero, ipsam voluptates, necessitatibus ab inventore! Non sint qui unde delectus veniam laboriosam, sit, laudantium asperiores nesciunt porro assumenda, minima voluptas autem doloribus placeat esse.</p>
-            <a v-on:click="loadAccount" class="btnHome">CUENTA</a>
+            <p>Psico te conecta con los pacientes que te necesitan:</p>
+            <li>Tus servicios estarán al alcance de un clic.</li>
+            <li>Acercamiento y focalización de tu nicho de trabajo.</li>
+            <li> Mayor probabilidad de contacto y citas efectuadas.</li>
+            <p>En cuenta encontrarás todos tus datos, los cuales podrás modificar y actualizar <br> para que los pacientes siempre estén en contacto contigo.</p>
+            <div>
+                <a v-on:click="loadAccount" class="btnHome">CUENTA</a>
+            </div>
         </div>
-        <div class="image">
+         <div class="image">
             <img src="../assets/imgHome.png" alt="">
         </div>
     </section>
@@ -28,14 +34,7 @@ export default {
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
-
-    *{
-        box-sizing:  border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Nunito', sans-serif;
-        font-size: 20px;
-    }
+ 
 
     section{
         min-height: 100vh;
@@ -45,7 +44,8 @@ export default {
     }
 
     .inicio{
-        display: flex;
+        display: grid;
+        grid-template-columns: 80% 20%;
         align-items: center;
         justify-content: center;
         background: url(../assets/initFont.png) no-repeat;
@@ -54,8 +54,23 @@ export default {
         background-position: center;
     }
 
-    .inicio .image{
-        width: 40vh;
+    .content{
+        display: grid;
+        grid-column: 1;
+        margin: 0 0;
+        padding:  10px 10px;
+    }
+
+    .image img{
+        padding: 0px;
+        width: 250px;
+        height: 230px;
+    }
+
+    .image{
+        display: grid;
+        grid-column: 2;
+        width: 10vh;
         animation:  float 3s linear infinite;
     }
 
