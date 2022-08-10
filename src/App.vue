@@ -87,10 +87,12 @@ export default {
       this.$router.push({name: "home"})
     },
 
-    
-
     loadHomePage: function(){
       this.$router.push({name: "homepage"})
+    },
+
+    loadPsychologist: function(){
+      this.$router.push({name: "psychologists"})
     },
 
     loadAboutUs: function(){

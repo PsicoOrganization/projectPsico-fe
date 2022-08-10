@@ -1,6 +1,6 @@
 <template>
 <body>
-    <div class="container">
+    <div class="containerLogIn">
         <div class="img-form">
             <img src="../assets/login.png" alt="">
         </div>
@@ -102,11 +102,19 @@ body{
     align-items: center;
 }
 
-.container{
+/* .container{
     margin: 0 auto;
     width: 100%;
     height: 100%;
     display: grid;
+} */
+
+.containerLogIn{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
 }
 
 .container-login{
@@ -115,8 +123,17 @@ body{
 }
 
 .img-form{
+   justify-items: center;
+   align-items: center;
+   background-color: #879ef4;
    display: grid;
    grid-column: 1;
+}
+
+.img-form img{
+    width: auto;
+    height: auto;
+
 }
 
 .form{
