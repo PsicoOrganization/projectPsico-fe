@@ -3,8 +3,13 @@
         <div class="filter">
             <button v-if="isDataCharged" v-on:click="filterByType">Buscar por categoria</button>
             <select v-if="isDataCharged" v-model="typeSpecialty">
-                <option value="Psicología forense">Psicología forense</option>
                 <option value="Psicología ocupacional">Psicología ocupacional</option>
+                <option value="Psicología">Psicología</option>
+                <option value="Psicología clínica">Psicología clínica</option>
+                <option value="Neuropsicología">Neuropsicología</option>
+                <option value="Psiquiatría">Psiquiatría</option>
+                <option value="Psicología familiar">Psicología familiar</option>
+                <option value="Psicofarmacología">Psicofarmacología</option>
             </select>
             <button v-on:click="getPsychologists">Ver todos los psicologos</button>
         </div>
