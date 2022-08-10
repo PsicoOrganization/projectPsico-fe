@@ -128,7 +128,7 @@ export default {
   },
 
   created: function(){
-
+    this.verifyAuth()
   }
 }
 </script>
