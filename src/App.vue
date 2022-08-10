@@ -15,12 +15,16 @@
           <li><a v-if="is_auth" v-on:click="logOut">Cerrar Sesion</a></li>
         </ul>
       </nav>
-      <li class="submenu"><a v-if="!is_auth" class="btn"><button>¿Eres profesional?</button></a>
-      <ul class="hijos">
-        <li><a v-on:click="loadLogIn">Iniciar Sesion</a></li>
-        <li><a v-on:click="loadSignUp">Registrarse</a></li>
-      </ul>
-      </li>
+      <div class="menu-divApp">
+        <ul class="menu-menu">
+        <li><a v-if="!is_auth" class="btn"><button>¿Eres profesional?</button></a>
+          <ul class="submenu">
+            <li><a v-on:click="loadLogIn">Iniciar Sesion</a></li>
+            <li><a v-on:click="loadSignUp">Registrarse</a></li>
+          </ul>
+        </li>
+        </ul>
+      </div>  
     </div>
 
     <div class="main-component">
@@ -42,8 +46,8 @@
         </div>
         <div class="box">
           <h2>SOBRE NOSOTROS</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, mollitia.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, mollitia.</p>
+          <p>Queremos que cuentes con los mejores profesionales en el área de la salud mental.</p>
+          <p>Si eres experto regístrate y acercate a los clientes que te necesitan.</p>
         </div>
         <div class="box">
           <h2>SIGUENOS</h2>
@@ -149,35 +153,41 @@ export default {
 
 /*Style Header*/
 
-.submenu{
-  list-style: none;
-}
+
 
 .header .btn button:hover{
   background-color: #8589ED;
   color: #BEE1FA;
   transform: scale(1.1);
-  
 }
 
-.header li:hover .hijos{
+.menu-divApp{
+	background: #8589ED;
+}
+
+.menu-divApp ul{
+	list-style: none;  
+}
+
+
+/* .menu-menu li:hover .submenu{
 	display: block;
 }
 
-.header .submenu .hijos{
+.menu-menu .submenu{
 	display: none;
 	background: #8589ED;
-	position: relative;
+  position: absolute;
 	width: 100%;
-}
+} */
 
-.header .submenu .hijos li{
+/* .menu-menu .submenu li{
 	display: block;
 	overflow: hidden;
 	border-bottom: none;
-}
+} */
 
-.header .submenu .hijos li a{
+.menu-menu .submenu li a{
 	display: block;
 }
 
@@ -218,7 +228,7 @@ export default {
 .header ul li{
   display: inline-block;
   padding: 0 20px;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .header ul li:hover{

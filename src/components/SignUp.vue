@@ -17,8 +17,13 @@
                         <option value="O">Otro</option>
                     </select>
                     <select name="typeSpecialty" v-model="user.typeSpecialty.nameSpecialty">
-                        <option value="Psicología forense">Psicología forense</option>
                         <option value="Psicología ocupacional">Psicología ocupacional</option>
+                        <option value="Psicología">Psicología</option>
+                        <option value="Psicología clínica">Psicología clínica</option>
+                        <option value="Neuropsicología">Neuropsicología</option>
+                        <option value="Psiquiatría">Psiquiatría</option>
+                        <option value="Psicología familiar">Psicología familiar</option>
+                        <option value="Psicofarmacología">Psicofarmacología</option>
                     </select>
                 </div>
                 <div class="form-right">
@@ -29,6 +34,10 @@
                     <select name="ciudad" v-model="user.city.name">
                         <option value="Bogotá">Bogotá</option>
                         <option value="Medellin">Medellín</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Cúcuta">Cúcuta</option>
+                        <option value="Pereira">Pereira</option>
+                        <option value="Barranquilla">Barranquilla</option>
                     </select>
                 </div>
                 <div class="form-footer">
