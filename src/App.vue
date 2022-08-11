@@ -19,8 +19,8 @@
         <ul class="menu-menu">
         <li><a v-if="!is_auth" class="btn"><button>¿Eres profesional?</button></a>
           <ul class="submenu">
-            <li><a v-on:click="loadLogIn">Iniciar Sesion</a></li>
-            <li><a v-on:click="loadSignUp">Registrarse</a></li>
+            <li><a v-if="!is_auth" v-on:click="loadLogIn">Iniciar Sesion</a></li>
+            <li><a v-if="!is_auth" v-on:click="loadSignUp">Registrarse</a></li>
           </ul>
         </li>
         </ul>
